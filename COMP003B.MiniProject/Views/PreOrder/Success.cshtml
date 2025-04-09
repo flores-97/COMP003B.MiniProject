@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Get Excited!";
+    Layout = "~/Views/Shared/_Layout"; 
+}
+<h2>@ViewData["Title"]</h2>
+<p>Thank you, @Model.FullName!</p>
+<p>You will receive a copy of your receipt to @Model.Email</p>
+<p>Your @Model.Platform (@Model.OrderUnit) will arrive in 4 to 5 weeks.</p>
+@if (!string.IsNullOrWhiteSpace(Model.Discount))
+{
+    <p>Your code @Model.Discount has been applied!</p>
+}
