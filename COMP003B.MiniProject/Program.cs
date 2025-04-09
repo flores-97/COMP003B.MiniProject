@@ -1,3 +1,5 @@
+using COMP003B.MiniProject.Middleware;
+
 namespace COMP003B.MiniProject
 {
     public class Program
@@ -20,7 +22,10 @@ namespace COMP003B.MiniProject
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
+            app.UseMiddleware<RequestLoggingMiddleware>();
 
             app.UseRouting();
 
@@ -28,7 +33,7 @@ namespace COMP003B.MiniProject
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=GameSystem}/{action=Index}/{id?}");
 
             app.Run();
         }
