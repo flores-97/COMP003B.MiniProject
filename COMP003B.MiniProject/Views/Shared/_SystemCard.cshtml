@@ -7,8 +7,8 @@
 
 <div class="card mb-3">
     <div class="card-body" style="text-align: center" >
-        <h4 class="card-title" >@Model.Platform</h4>
-        <p class="card-text" >@Model.Summary</p>
+        <h4 class="card-title" >@Model.Platform $@Model.Price</h4>
+        <p class="card-text" >@Model.Summary @Model.StorageGB TB base model. </p>
         <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-outline-primary">Read More</a>
     </div>
 </div>
