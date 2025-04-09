@@ -5,10 +5,10 @@ namespace COMP003B.MiniProject.Controllers
 {
     public class PreOrderController : Controller
     {
-        [HttpGet("preorder/{platform}")]
-        public IActionResult PreOrder([FromForm] string preOrder)
+        [HttpGet("PreOrder/{platformId}")]
+        public IActionResult PreOrder([FromForm] string platformId)
         {
-            var model = new PreOrder { Platform = preOrder };
+            var model = new PreOrder { Platform = platformId };
             return View(model);
         }
 

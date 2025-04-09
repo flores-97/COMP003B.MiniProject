@@ -12,9 +12,12 @@
         {
             Console.WriteLine($"[Request] {context.Request.Method} {context.Request.Path}");
 
-            await _next(context);
+            if (context != null)
+            {
+                await _next(context);
 
-            Console.WriteLine($"[Response] {context.Response.StatusCode}");
+                Console.WriteLine($"[Response] {context.Response.StatusCode}");
+            }
         }
     }
 }
